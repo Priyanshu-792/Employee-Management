@@ -1,27 +1,32 @@
-# EmployeeManagement
+# Employee Management Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.3.
+## Overview
+This application provides functionality to manage employees. Users can add, edit, and delete employee records.
 
-## Development server
+## Functionality
+- **Add Employee**: Allows users to add a new employee with details such as name, contact number, email, gender, and skills.
+- **Edit Employee**: Allows users to edit existing employee details.
+- **Delete Employee**: Allows users to delete an employee after confirmation.
+- **Employee List**: Displays a list of all employees with options to edit or delete each employee.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Routing
+The application has three routes:
+1. **Employee List**: Route displaying all employee records.
+2. **Employee Add**: Route for adding a new employee.
+3. **Employee Edit**: Route for editing an existing employee.
 
-## Code scaffolding
+## Components and Pages
+### Employee List Page
+- Displays a table with all employee records.
+- Provides options to edit or delete each employee.
+- Contains a button to add a new employee.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Employee Add/Edit Page
+- Form for adding or editing employee details.
+- Fields include employee name, ID, contact number, email, gender (radio button), and skills (dynamic fields with add and delete options).
 
-## Build
+## Variables and Models
+- **Employee Model**: Represents the structure of an employee record, including name, ID, contact number, email, gender, and skills.
+- **Skill Model**: Represents a skill, including the skill name and experience level.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## File Structure

@@ -1,0 +1,108 @@
+
+
+
+
+$green-color: rgb(25, 156, 51);
+$light-blue: rgb(41, 115, 243);
+$dark-blue: rgb(3, 28, 121);
+
+.employee-form {
+  margin: 60px;
+  padding: 10px;
+}
+
+.form-row {
+  display: flex;
+  column-gap: 40px;
+  margin-bottom: 15px;
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+input {
+  width: 410px;
+  padding: 0 10px;
+}
+
+.gender-input {
+  display: flex;
+  column-gap: 20px;
+
+  .male-input {
+    display: flex;
+    column-gap: 5px;
+  }
+
+  .female-input {
+    display: flex;
+    column-gap: 5px;
+  }
+
+  input {
+    width: 10px;
+  }
+}
+
+.skill-input input {
+  width: 195px;
+  margin-right: 10px;
+}
+
+.skill-input {
+  margin-bottom: 10px;
+}
+
+.skill-input #skill {
+  width: 195px;
+  height: 28px;
+}
+
+.skill-heading {
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    background-color: $green-color;
+    border: none;
+    color: white;
+    border-radius: 4px;
+  }
+}
+
+input[type="radio"] {
+  appearance: none;
+  width: 5px;
+  border-radius: 100%;
+  border: 2px solid #999;
+  outline: none;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+input[type="radio"]:checked {
+  background-color: #0476cd;
+}
+
+#delete-btn {
+  margin-left: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: red;
+  color: white;
+}
+
+#btn-submit {
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 4px;
+  background-color: $light-blue;
+}
+
+#btn-submit:active {
+  background-color: $dark-blue;
+}

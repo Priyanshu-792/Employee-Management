@@ -1,0 +1,53 @@
+
+<div >
+  <div id="del-msg"></div>
+
+  <div class="container">
+  <button id="add-btn" class="add-button" (click)="addEmployee()">Add Employee</button>
+<table id="myTable">
+    <thead>
+      <tr>
+        <th >Id</th>
+        <th >Name</th>
+        <th >Email</th>
+        <th >Contact</th>
+        <th >Gender</th>
+        <th >Skills</th>
+        <th >Action</th>
+      </tr>
+    </thead>
+    <tbody id="table-data">
+       <!-- Loop through each employee to display their data -->
+      <tr *ngFor="let employee of employee;let i=index">
+        <td>
+          {{employee.employeeId}}
+        </td>
+        <td>
+          {{employee.name}}
+        </td>
+        <td>
+          {{employee.email}}
+        </td>
+        <td>
+          {{employee.contactNumber}}
+        </td>
+        <td>
+          {{employee.gender}}
+        </td>
+        <td>
+    <!-- Display Employee Skills -->
+          <li *ngFor="let skill of employee.skills; let i = index">
+            <ng-container *ngIf="employee.skills.length > 1">{{ i + 1 }}. </ng-container>
+            {{ skill.skillName }} (Exp. {{ skill.experience }})
+          </li>
+        </td>
+          <!-- Buttons for editing and deleting an employee -->
+        <td><button class="action-btn" (click)="editEmployee(employee.employeeId)"><i class="fa-solid fa-pen" ></i></button> <button class="action-btn" (click)="deleteEmployee(i)"><i class="fa-solid fa-trash"></i></button></td>
+        
+      </tr>
+
+ 
+      <tbody>
+  </table>
+</div>
+</div>

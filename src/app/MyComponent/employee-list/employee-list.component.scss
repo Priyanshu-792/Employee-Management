@@ -1,0 +1,85 @@
+
+// global colors
+$primary-color: #4CAF50; // For the "Add Employee" button background color
+$primary-hover-color: #45a049; // Hover color for the "Add Employee" button
+$warning-color: rgb(231, 28, 28); // Color for the success message background
+
+// Define container styles
+.container {
+  position: relative;
+}
+
+// Style for the "Add Employee" button
+.add-button {
+  position: relative;
+  float: right;
+  margin: 10px 0px 10px 0px; 
+  padding: 10px 20px;
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $primary-hover-color;
+  }
+}
+
+// Style for delete message
+#del-msg {
+  position: absolute;
+  margin:20px;
+  padding: 7px 12px;
+  color: white;
+  font-size: 15px;
+  display: none;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: $warning-color;
+  text-align: center;
+}
+
+// Remove bullets from list items
+li {
+  list-style: none;
+}
+
+// Styles for the table
+#myTable {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+// Styles for table headers and cells
+#myTable th,
+#myTable td {
+  padding: 8px;
+  text-align: left;
+}
+
+// Style for table headers
+#myTable th {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+// Alternate row background color
+#myTable tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+// Hover effect for rows
+#myTable tbody tr:hover {
+  background-color: #ddd;
+}
+
+// Styles for action buttons
+.action-btn {
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  margin: 2px 2px 2px 0px;
+}
