@@ -29,4 +29,3 @@ The application has three routes:
 - **Employee Model**: Represents the structure of an employee record, including name, ID, contact number, email, gender, and skills.
 - **Skill Model**: Represents a skill, including the skill name and experience level.
 
-## File Structure
