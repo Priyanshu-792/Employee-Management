@@ -7,7 +7,7 @@ import { EmployeeListComponent } from './MyComponent/employee-list/employee-list
 import { AddEmployeeComponent } from './MyComponent/add-employee/add-employee.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 const routes: Routes = [
   { path: '', component: EmployeeListComponent},
   { path: 'add-employee', component: AddEmployeeComponent },
@@ -27,6 +27,7 @@ const routes: Routes = [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    SweetAlert2Module.forRoot(),
     RouterModule.forRoot(routes)
   ],
   providers: [],

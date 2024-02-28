@@ -25,20 +25,6 @@ $warning-color: rgb(231, 28, 28); // Color for the success message background
     background-color: $primary-hover-color;
   }
 }
-
-// Style for delete message
-#del-msg {
-  position: absolute;
-  margin:20px;
-  padding: 7px 12px;
-  color: white;
-  font-size: 15px;
-  display: none;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  background-color: $warning-color;
-  text-align: center;
-}
-
 // Remove bullets from list items
 li {
   list-style: none;

@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { EmployeeService } from '../../MyService/employee.service';
 import { Employee } from '../../MyModels/employee.model';
+import Swal from 'sweetalert2';
+
+
 
 @Component({
   selector: 'app-employee-list',
@@ -9,6 +12,8 @@ import { Employee } from '../../MyModels/employee.model';
   styleUrls: ['./employee-list.component.scss']
 })
 export class EmployeeListComponent {
+
+
 
   employee: Employee[] = [];
   constructor(private employeeService: EmployeeService,private router:Router) {
@@ -27,31 +32,36 @@ export class EmployeeListComponent {
   editEmployee(employeeId: string) {
     this.router.navigate(['/edit-employee', employeeId]);
   }
+
+  //to show deletion message on deleting the table row of the data
   deleteEmployee(index: number) {
     const employeeName = this.employee[index].name;
-    const confirmation = confirm(`Are you sure want to delete ${employeeName}?`);
-    if (confirmation) {
-       // Remove the employee from the list
-      this.employee.splice(index, 1);
-       // Show success message after deleting the employee
-      this.DeleteMessage(`The Employee ${employeeName} is deleted successfully.`);
-    }
-  }
+    
+    Swal.fire({
+      title: ` Are you sure you want to delete ${employeeName}?`,
+      showDenyButton: true,
+      confirmButtonText: "Yes",
+      denyButtonText: `No`
+    }).then((result) => {
+      
+      if (result.isConfirmed) {
+        this.employee.splice(index, 1);
+        Swal.fire({
+          icon: 'success',
+          title: 'The Employee ${employeeName} is deleted successfully.',
+          timer: 2000, // Time is 2seconds as mentioned in the assignment requirement
+        });
 
+      } else if (result.isDenied) {
+        Swal.fire({
+          icon: 'info',
+          title: 'Not Deleted',
+          timer: 2000, // Time is 2seconds as mentioned in the assignment requirement
+        });
+      }
+    });
+  }
   
-  // Show success message for a short duration
- DeleteMessage(message: string) {
-    const successElement = document.getElementById('del-msg');
-    if (successElement) {
-      successElement.innerText = message;
-      const messageWidth = message.length * 8;
-      successElement.style.width = `${messageWidth}px`;
-      successElement.style.display = 'block';
-      setTimeout(() => {
-        successElement.style.display = 'none';
-      }, 2000);
 
-  }
-}
 }
 
