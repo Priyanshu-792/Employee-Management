@@ -104,21 +104,6 @@ export class AddEmployeeComponent implements OnInit {
 
   onSubmit() {
     if (this.employeeForm.valid) {
-      // Check if employee ID already exists
-      const employeeId = this.employeeForm.value.employeeId;
-      //this logic is used because when the form is opened after clicking in edit option and their is pre filled id it should not enter to this condition, enabling the user to keep the id same if he/she wishes
-      if (employeeId == undefined) {
-        if (this.employeeService.isEmployeeIdExists(employeeId)) {
-          Swal.fire({
-            icon: 'warning',
-            title: 'Employee Id invalid!',
-            text: 'Employee ID You entered already exists. Please enter a unique ID.',
-            timer: 4000,
-          });
-          return;
-        }
-      }
-
       // Display an alert message if name contains special characters or digits
       const name = this.employeeForm.value.name;
       if (/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?0-9]/.test(name)) {
@@ -155,7 +140,7 @@ export class AddEmployeeComponent implements OnInit {
         return;
       }
 
-      // Proceed with form submission if name is valid
+      // Proceed with form submission if everything is valid
       const newEmployee = {
         employeeId: this.employeeForm.value.employeeId,
         name: this.employeeForm.value.name,

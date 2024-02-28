@@ -10,11 +10,6 @@ import { throwError } from 'rxjs';
 export class EmployeeService {
   employees: Employee[] = [];
   constructor() { }
-
-
-
-
-
  
    // Method to retrieve an employee by ID
    getEmployeeById(employeeId: string): Employee | undefined{
@@ -25,9 +20,7 @@ export class EmployeeService {
     return this.employees.some(emp => emp.employeeId === employeeId);
   }
 
-
 // methods to add and update a new employee to the array
-
   addEmployee(employee: Employee): Observable<void> {
     this.employees.push(employee);
     return of(undefined);
@@ -42,7 +35,5 @@ export class EmployeeService {
       this.employees[index] = updatedEmployee;
     }
   }
-
-
 
 }

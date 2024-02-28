@@ -1,73 +1,118 @@
-
-
-
 <div class="employee-form">
-    <h1>Add Employee</h1>
-    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" action="#">
-      <div class="form-row">
-        <div class="form-group">
-          <label class="details" for="employeeId">Employee ID:</label>
-          <input type="text" id="employeeId" formControlName="employeeId" placeholder="Enter ID">
-        </div>
-        <div class="form-group">
-          <label class="details" for="name">Name:</label>
-          <input type="text" id="name" formControlName="name" placeholder="Enter Name">
-        </div>
+  <h1>Add Employee</h1>
+  <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" action="#">
+    <!-- Employee ID and Name input fields -->
+    <div class="form-row">
+      <div class="form-group">
+        <label class="details" for="employeeId">Employee ID:</label>
+        <input
+          type="text"
+          id="employeeId"
+          formControlName="employeeId"
+          placeholder="Enter ID"
+        />
       </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label class="details" for="contactNumber">Contact Number:</label>
-          <input type="text" id="contactNumber" formControlName="contactNumber" placeholder="Enter Contact Number">
-        </div>
-        <div class="form-group">
-          <label class="details" for="email">Email:</label>
-          <input type="email" id="email" formControlName="email" placeholder="Enter Email">
-        </div>
+      <div class="form-group">
+        <label class="details" for="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          formControlName="name"
+          placeholder="Enter Name"
+        />
       </div>
-      
-
-      <div class="form-row">
-        <div class="form-group" formArrayName="skills">
-           
-                <div class="skill-heading">
-                    <label for="skill">Skill:</label>
-                    <button (click)="addSkill()" id="add-btn">Add Skill +</button>
-                   </div>
-                   <div class="dynamic-content-wrapper"  >
-                   <div class="skill-input"  *ngFor="let skill of skillForms.controls; let i = index" [formGroupName]="i">
-                    <input type="text" placeholder="Enter skill name" formControlName="skillName"  >
-                    <select name="skill" id="skill" aria-placeholder="Select Experience" formControlName="experience">
-                      <option value="" disabled selected>Select experience</option>
-                      <option value="1year">1 Year</option>
-                      <option value="2years">2 Years</option>
-                      <option value="3years">3 Years</option>
-                      <option value="4years">4 Years</option>
-                      <option value="5+ years">5+ Years</option>
-                  </select>
-               <button  *ngIf="skillForms.controls.length>1"  (click)="removeSkill(i)" type="button" id="delete-btn"><i class="fa-solid fa-trash"></i></button></div>       
-
-                  </div>
-  
-        </div>
-        <div class="form-group">
-            
-          <div class="gender-heading">
-            <label for="gender">Gender:</label>
-          </div>
-          <div class="gender-input">
-            <div class="male-input">
-                <input type="radio" name="gender" formControlName="gender" value="male">
-                <label for="male">Male</label>
-            </div>
-            <div class="female-input">
-                <input type="radio" name="gender" formControlName="gender" value="female">
-                <label for="female" >Female</label>
-            </div>
-          </div>
-              
-        </div>
     </div>
-      <button type="submit" id="btn-submit">Submit</button>
-    </form>
-  </div>
+    <!-- Contact Number and Email input fields -->
+    <div class="form-row">
+      <div class="form-group">
+        <label class="details" for="contactNumber">Contact Number:</label>
+        <input
+          type="text"
+          id="contactNumber"
+          formControlName="contactNumber"
+          placeholder="Enter Contact Number"
+        />
+      </div>
+      <div class="form-group">
+        <label class="details" for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          placeholder="Enter Email"
+        />
+      </div>
+    </div>
+
+    <!-- Skills input fields -->
+    <div class="form-row">
+      <div class="form-group" formArrayName="skills">
+        <div class="skill-heading">
+          <label for="skill">Skill:</label>
+          <button (click)="addSkill()" id="add-btn">Add Skill +</button>
+        </div>
+        <div class="dynamic-content-wrapper">
+          <div
+            class="skill-input"
+            *ngFor="let skill of skillForms.controls; let i = index"
+            [formGroupName]="i"
+          >
+            <input
+              type="text"
+              placeholder="Enter skill name"
+              formControlName="skillName"
+            />
+            <select
+              name="skill"
+              id="skill"
+              aria-placeholder="Select Experience"
+              formControlName="experience"
+            >
+              <option value="" disabled selected>Select experience</option>
+              <option value="1year">1 Year</option>
+              <option value="2years">2 Years</option>
+              <option value="3years">3 Years</option>
+              <option value="4years">4 Years</option>
+              <option value="5+ years">5+ Years</option>
+            </select>
+            <button
+              *ngIf="skillForms.controls.length > 1"
+              (click)="removeSkill(i)"
+              type="button"
+              id="delete-btn"
+            >
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+       <!-- Gender selection input -->
+      <div class="form-group">
+        <div class="gender-heading">
+          <label for="gender">Gender:</label>
+        </div>
+        <div class="gender-input">
+          <div class="male-input">
+            <input
+              type="radio"
+              name="gender"
+              formControlName="gender"
+              value="male"
+            />
+            <label for="male">Male</label>
+          </div>
+          <div class="female-input">
+            <input
+              type="radio"
+              name="gender"
+              formControlName="gender"
+              value="female"
+            />
+            <label for="female">Female</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button type="submit" id="btn-submit">Submit</button>
+  </form>
+</div>
