@@ -43,7 +43,7 @@ export class EmployeeListComponent {
         this.employee.splice(index, 1);
         Swal.fire({
           icon: 'success',
-          title: 'The Employee ${employeeName} is deleted successfully.',
+          title: `The Employee ${employeeName} is deleted successfully.`,
           timer: 2000, // Time is 2seconds as mentioned in the assignment requirement
         });
       } else if (result.isDenied) {
